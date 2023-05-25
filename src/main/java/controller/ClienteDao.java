@@ -27,7 +27,7 @@ public class ClienteDao {
     List<Cliente> lis=new ArrayList();
     Connection cn=MySQLConexion.getConexion();
     try{
-      String slq="select nrodoc,tipo,monto , nombre, ape, email, telef, fecha from cliente";  
+      String slq="select numeroDocumento,tipoDocumento, nombres, apellidos, email, telefono, creado from cliente";  
         PreparedStatement st=cn.prepareStatement(slq);
         ResultSet rs=st.executeQuery();
         while(rs.next()){//leer cada fila de la tabla
@@ -39,8 +39,7 @@ public class ClienteDao {
             c.setCorreo(rs.getString(5));
             c.setTelef(rs.getInt(6));
             c.setFecha(rs.getString(7));
-            
-            lis.add(c); //el objeto prestamo de un cliente pasar a la lista
+ //el objeto prestamo de un cliente pasar a la lista
         }
     }catch(Exception ex){
         ex.printStackTrace();

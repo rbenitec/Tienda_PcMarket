@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login y Register - MagtimusPro</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="static/css/login_register.css" rel="stylesheet" type="text/css"/>
+        
+    </head>
+    <body>
+
+        <main>
+
+            <div class="contenedor__todo">
+                <div class="caja__trasera">
+                    <div class="caja__trasera-login">
+                        <h3>¿Ya tienes una cuenta?</h3>
+                        <p>Inicia sesión para entrar en la página</p>
+                        <button id="btn_iniciar-sesion">Iniciar Sesión</button>
+                    </div>
+                    <div class="caja__trasera-register">
+                        <h3>¿Aún no tienes una cuenta?</h3>
+                        <p>Regístrate para que puedas iniciar sesión</p>
+                        <button id="btn_registrarse">Registrarse</button>
+                    </div>
+                </div>
+
+                <!--Formulario de Login y registro-->
+                <div class="contenedor__login-register">
+                    <!--Login-->
+                    <form action="" class="formulario__login">
+                        <h2>Iniciar Sesión</h2>
+                        <div class="login_form-control">
+                        <input type="text" id="correo_login" placeholder="Correo Electronico">
+                        <div class="error"></div>
+                        </div>
+                        <div class="login_form-control">
+                        <input type="password" id="contrasena_login" placeholder="Contraseña">
+                        <div class="error"></div>
+                        </div>
+                        <button id="btn_iniciar-sesion_form">Entrar</button>
+                    </form>
+
+                    <!--Register-->
+                    <form action="" class="formulario__register">
+                        <h2>Registrarse</h2>
+                        <div class="registro-control">
+                        <input type="text" id="nombres" placeholder="Nombre completo">
+                        <div class="error"></div>
+                        </div>
+                        
+                        <div class="registro-control">
+                        <input type="text" id="apellidos" placeholder="Apellido completo">
+                        <div class="error"></div>
+                        </div>
+                        
+                        <div class="registro-control">
+                        <input type="text" id="correo_register" placeholder="Correo Electronico">
+                        <div class="error"></div>
+                        </div>
+                        
+                        <div class="registro-control">
+                        <input type="password" id="contrasena_register" placeholder="Contraseña">
+                        <div class="error"></div>
+                        </div>
+                        
+                        <div class="registro-control">
+                        <div class="opciones-genero" id="genero">
+                            <input type="radio" value="N" id="genero-femenino" name="genero">
+                            <label for="genero-femenino">Masculino</label>
+                            <input type="radio" value="E" id="genero-masculino" name="genero">
+                            <label for="genero-masculino">Femenino</label>
+                        </div>
+                            <div class="error"></div>
+                        </div>
+                        <button id="btn_registrarse_form" type="submit">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+        <script src="static/js/script.js" type="text/javascript"></script>
+        <script src="static/js/validacion.js" type="text/javascript"></script>
+    </body>
+
+</html>

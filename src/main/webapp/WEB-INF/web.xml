@@ -4,9 +4,17 @@
         <servlet-name>Carrito</servlet-name>
         <servlet-class>controller.Carrito</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>servlet</servlet-name>
+        <servlet-class>miServlet.servlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Carrito</servlet-name>
         <url-pattern>/Carrito</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servlet</servlet-name>
+        <url-pattern>/servlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

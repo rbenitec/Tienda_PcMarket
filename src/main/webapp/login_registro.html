@@ -40,19 +40,24 @@
                         <input type="password" id="contrasena_login" placeholder="Contraseña">
                         <div class="error"></div>
                         </div>
-                        <button id="btn_iniciar-sesion_form">Entrar</button>
+                        <button id="btn_iniciar-sesion_form" type="submit">Entrar</button>
                     </form>
 
                     <!--Register-->
                     <form action="" class="formulario__register">
                         <h2>Registrarse</h2>
                         <div class="registro-control">
-                        <input type="text" id="nombres" placeholder="Nombre completo">
+                        <input type="text" id="nombres" placeholder="Nombres">
                         <div class="error"></div>
                         </div>
                         
                         <div class="registro-control">
-                        <input type="text" id="apellidos" placeholder="Apellido completo">
+                        <input type="text" id="user" placeholder="Usuario">
+                        <div class="error"></div>
+                        </div>
+                        
+                        <div class="registro-control">
+                        <input type="text" id="dni" placeholder="Documento de DNI">
                         <div class="error"></div>
                         </div>
                         
@@ -75,14 +80,15 @@
                         </div>
                             <div class="error"></div>
                         </div>
-                        <button id="btn_registrarse_form" type="submit">Registrarse</button>
+                        <button id="btn_registrarse_form" type="button">Registrarse</button>
                     </form>
                 </div>
             </div>
 
         </main>
         <script src="static/js/script.js" type="text/javascript"></script>
-        <script src="static/js/validacion.js" type="text/javascript"></script>
+        <script src="static/js/validacion_register.js" type="text/javascript"></script>
+        <script src="static/js/validacion_login.js" type="text/javascript"></script>
     </body>
 
 </html>

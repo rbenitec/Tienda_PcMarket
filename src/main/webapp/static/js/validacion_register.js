@@ -1,9 +1,11 @@
 const form = document.getElementById('formulario__register');
 const nombre = document.getElementById('nombres');
-const apellido = document.getElementById('apellidos');
+const user = document.getElementById('user');
 const correo = document.getElementById('correo_register');
 const contrasena = document.getElementById('contrasena_register');
 const genero = document.getElementById('genero');
+const dni = document.getElementById('dni');
+
 
 const generoOptions = document.querySelectorAll('input[name="genero"]');
 let generoValue = '';
@@ -18,6 +20,7 @@ const btnRegistrarse = document.getElementById('btn_registrarse_form');
 btnRegistrarse.addEventListener('click', e => {
     e.preventDefault();
     validateInputs();
+    
 });
 
 const setError = (element, message) => {
@@ -45,7 +48,8 @@ const isValidEmail = email => {
 
 const validateInputs = () => {
     const nombreValue = nombre.value.trim();
-    const apellidoValue = apellido.value.trim();
+    const userValue = user.value.trim();
+    const dniValue = dni.value.trim();
     const correoValue = correo.value.trim();
     const contrasenaValue = contrasena.value.trim();
     let generoValue = '';
@@ -63,10 +67,18 @@ const validateInputs = () => {
         setSuccess(nombre);
     }
 
-    if (apellidoValue === '') {
-        setError(apellido, 'Sus apellidos son requeridos');
+    if (userValue === '') {
+        setError(user, 'Requiere de un nombre de usuario');
     } else {
-        setSuccess(apellido);
+        setSuccess(user);
+    }
+    
+    if (dniValue === '') {
+        setError(dni, 'DNI obligatorio');
+    } else if (dniValue.length < 8) {
+        setError(dni, 'El DNI tiene 8 caracteres');
+    } else {
+        setSuccess(dni);
     }
 
     if (correoValue === '') {

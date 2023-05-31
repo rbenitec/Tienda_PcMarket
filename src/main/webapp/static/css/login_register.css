@@ -97,7 +97,7 @@ main{
 
 .contenedor__login-register form{
     width: 100%;
-    padding: 40px 20px;
+    padding: 25px 20px;
     background: white;
     position: absolute;
     border-radius: 20px;
@@ -177,6 +177,23 @@ main{
     border-color: #ff3860;
 }
 .registro-control .error {
+    border-color: #ff3860;
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+
+.login_form-control input:focus{
+    outline: 0;
+}
+.login_form-control.success input{
+    border-color: #09c372;
+}
+
+.login_form-control.error input{
+    border-color: #ff3860;
+}
+.login_form-control .error {
     border-color: #ff3860;
     color: #ff3860;
     font-size: 9px;

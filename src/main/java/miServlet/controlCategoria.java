@@ -31,8 +31,8 @@ public class controlCategoria extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         Categoria p=new Categoria();
-        p.setCatnom(request.getParameter("nombre"));
-        p.setCatord(Integer.parseInt(request.getParameter("orden")));
+        p.setNombre(request.getParameter("nombre"));
+        p.setOrden(Integer.parseInt(request.getParameter("orden")));
         obj.adicion(p);
         String pag="/listadoCategoria.jsp";
         request.getRequestDispatcher(pag).forward(request, response);
@@ -56,9 +56,9 @@ public class controlCategoria extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         Categoria p=new Categoria();
-        p.setCatid(Integer.parseInt(request.getParameter("id")));
-        p.setCatnom(request.getParameter("nombre"));
-        p.setCatord(Integer.parseInt(request.getParameter("orden")));
+        p.setId(Integer.parseInt(request.getParameter("id")));
+        p.setNombre(request.getParameter("nombre"));
+        p.setOrden(Integer.parseInt(request.getParameter("orden")));
         obj.modifica(p);
         String pag="/listadoCategoria.jsp";
         request.getRequestDispatcher(pag).forward(request, response);

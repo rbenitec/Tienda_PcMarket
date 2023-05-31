@@ -18,10 +18,10 @@
             </thead>
             <%
                 for(Categoria x:obj.listado()){
-                out.print("<tr><td>"+x.getCatid()+"<td>"+x.getCatnom()+"<td>"+x.getCatord());
+                out.print("<tr><td>"+x.getId()+"<td>"+x.getNombre()+"<td>"+x.getOrden());
             %>
-            <td><a href="controlCategoria?opc=2&cod=<%=x.getCatid()%>">Editar</a>
-            <td><a href="controlCategoria?opc=4&cod=<%=x.getCatid()%>">Borrar</a>
+            <td><a href="controlCategoria?opc=2&cod=<%=x.getId()%>">Editar</a>
+            <td><a href="controlCategoria?opc=4&cod=<%=x.getId()%>">Borrar</a>
             <%
                 }
             %>

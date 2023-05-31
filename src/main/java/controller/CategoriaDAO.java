@@ -16,9 +16,9 @@ public class CategoriaDAO {
             ResultSet rs=st.executeQuery();
             while(rs.next()){
                 Categoria c=new Categoria();
-                c.setCatid(rs.getInt(1));
-                c.setCatnom(rs.getString(2));
-                c.setCatord(rs.getInt(3));
+                c.setId(rs.getInt(1));
+                c.setNombre(rs.getString(2));
+                c.setOrden(rs.getInt(3));
                 lis.add(c);
             }
         } catch (Exception ex) {
@@ -32,8 +32,8 @@ public class CategoriaDAO {
         try {
             String sql="insert into categorias values(null,?,?)";
             PreparedStatement st=cn.prepareStatement(sql);
-            st.setString(1, p.getCatnom());
-            st.setInt(2, p.getCatord());
+            st.setString(1, p.getNombre());
+            st.setInt(2, p.getOrden());
             st.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -50,9 +50,9 @@ public class CategoriaDAO {
             ResultSet rs=st.executeQuery();
             if(rs.next()){
                 p=new Categoria();
-                p.setCatid(rs.getInt(1));
-                p.setCatnom(rs.getString(2));
-                p.setCatord(rs.getInt(3));
+                p.setId(rs.getInt(1));
+                p.setNombre(rs.getString(2));
+                p.setOrden(rs.getInt(3));
                 
             }
         } catch (Exception ex) {
@@ -67,8 +67,8 @@ public class CategoriaDAO {
         try {
             String sql="update categorias set nombre=?,orden=? where id=?";
             PreparedStatement st=cn.prepareStatement(sql);
-            st.setString(1, p.getCatnom());
-            st.setInt(2, p.getCatord());
+            st.setString(1, p.getNombre());
+            st.setInt(2, p.getOrden());
             st.executeUpdate();
         } catch (Exception e) {
         }

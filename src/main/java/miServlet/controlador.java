@@ -113,13 +113,14 @@ public class controlador extends HttpServlet {
         String error="";
         String email = request.getParameter("email");
         String pass = request.getParameter("pass");
-        Usuario user=new Usuario();
-        user = log.obtenerUsuario(email, pass);
+        Usuario user=  log.obtenerUsuario(email, pass);
+        String userName = user.getNombres();
         System.out.println("email: "+email);
         System.out.println("pass: "+pass);
         if(user!=null){
             System.out.println("Usuario Valido");
             System.out.println("user: "+user.toString());
+            request.setAttribute("user", userName);
             pag = "listarProductos.jsp";
         }else{
             System.out.println("Usuario Invalido");

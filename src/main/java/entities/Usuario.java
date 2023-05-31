@@ -110,6 +110,26 @@ public class Usuario {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Usuario{id=").append(id);
+        sb.append(", id_rol=").append(id_rol);
+        sb.append(", email=").append(email);
+        sb.append(", password=").append(password);
+        sb.append(", nombres=").append(nombres);
+        sb.append(", sexo=").append(sexo);
+        sb.append(", fecnacimiento=").append(fecnacimiento);
+        sb.append(", telefono=").append(telefono);
+        sb.append(", direccion=").append(direccion);
+        sb.append(", estado=").append(estado);
+        sb.append(", dni=").append(dni);
+        sb.append(", username=").append(username);
+        sb.append('}');
+        return sb.toString();
+    }
+    
     
     
 }

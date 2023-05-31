@@ -9,17 +9,22 @@
         <link href="static/css/adminlte.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body style="font-family: Leelawadee UI, Consolas, Georgia, Arial Narrow ">
+        
+        <%
+            ProductoDao obj = new ProductoDao();
+            String userName =(String)request.getAttribute("user");
+        %>  
+        
         <nav>
             <ol class="breadcrumb my-3">
                 <li class="breadcrumb-item"><a href="login_html.html">Login</a></li>
-                <li class="breadcrumb-item"><a href="listaCliente.jsp">Categorias</a></li>
+                <li class="breadcrumb-item"><a href="listadoCategoria.jsp">Categorias</a></li>
                 <li class="breadcrumb-item active">Productos</li>
+                <li class="breadcrumb-item" style="text-align: right"><a style="text-align: right" href="login_html.html">Bienvenido: <%=userName%> </a></li>
             </ol>
         </nav>
 
-        <%
-            ProductoDao obj = new ProductoDao();
-        %>  
+        
 
         <div class="card">
             <div class="card-header">

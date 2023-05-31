@@ -17,15 +17,15 @@
             <input type="hidden" name="opc" value="3"> 
         <div class="form-group"> 
             <label for="id">ID de la Categoria</label> 
-            <input type="text" class="form-control" id="id" name="id" value="<%=pe.getCatid()%>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<%=pe.getId()%>" readonly> 
         </div>
         <div class="form-group"> 
             <label for="nombre">Nombre de la Categoria</label> 
-            <input type="text" class="form-control" id="nombre" name="nombre" value="<%=pe.getCatnom()%>"> 
+            <input type="text" class="form-control" id="nombre" name="nombre" value="<%=pe.getNombre()%>"> 
         </div> 
         <div class="form-group"> 
             <label for="orden">Nro. de orden</label> 
-            <input type="text" class="form-control" id="orden" name="orden" value="<%=pe.getCatord()%>"> 
+            <input type="text" class="form-control" id="orden" name="orden" value="<%=pe.getOrden()%>"> 
         </div> 
    
       <button type="submit" class="btn btn-default">Modificar</button> 

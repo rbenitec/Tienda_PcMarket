@@ -30,17 +30,17 @@
                 <!--Formulario de Login y registro-->
                 <div class="contenedor__login-register">
                     <!--Login-->
-                    <form action="" class="formulario__login">
+                    <form action="controlador" class="formulario__login">
                         <h2>Iniciar Sesión</h2>
                         <div class="login_form-control">
-                        <input type="text" id="correo_login" placeholder="Correo Electronico">
+                        <input type="text" id="correo_login" placeholder="Correo Electronico" name="email">
                         <div class="error"></div>
                         </div>
                         <div class="login_form-control">
-                        <input type="password" id="contrasena_login" placeholder="Contraseña">
+                        <input type="password" id="contrasena_login" placeholder="Contraseña" name="pass">
                         <div class="error"></div>
                         </div>
-                        <button id="btn_iniciar-sesion_form" type="submit">Entrar</button>
+                        <button id="btn_iniciar-sesion_form" type="submit" >Entrar</button>
                     </form>
 
                     <!--Register-->

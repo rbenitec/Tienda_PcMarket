@@ -1,8 +1,9 @@
-
 package miServlet;
 
+import controller.LoginDao;
 import controller.ProductoDao;
 import entities.Producto;
+import entities.Usuario;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,81 +18,116 @@ import javax.servlet.http.Part;
 
 public class controlador extends HttpServlet {
 
-    ProductoDao obj=new ProductoDao();
+    ProductoDao obj = new ProductoDao();
+    LoginDao log= new LoginDao();
     private static final String RUTA_DESTINO = "statis/img/";
 
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int op=Integer.parseInt(request.getParameter("opc"));
-        if(op==1)adicion(request, response);
-        if(op==2)consulta(request, response);
-        if(op==3)cambia(request, response);
-        if(op==4)anular(request, response);
+        int op = Integer.parseInt(request.getParameter("opc"));
+        if (op == 1) {
+            adicion(request, response);
+        }
+        if (op == 2) {
+            consulta(request, response);
+        }
+        if (op == 3) {
+            cambia(request, response);
+        }
+        if (op == 4) {
+            anular(request, response);
+        }
+        if (op == 5) {
+            validar(request, response);
+        }
     }
-    
+
     protected void adicion(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    // if(!obj.busNombre(request.getParameter("cliente"))){
+        // if(!obj.busNombre(request.getParameter("cliente"))){
         int idCategoria = Integer.parseInt(request.getParameter("categoria"));
         String nombre = request.getParameter("nombre");
         String decripcion = request.getParameter("descripcion");
         double precio = Double.parseDouble(request.getParameter("precio"));
         int stock = Integer.parseInt(request.getParameter("stock"));
-        
-        System.out.println("categoria: "+ idCategoria);
-        System.out.println("nombre: "+ nombre);
-        System.out.println("decripcion: "+ decripcion);
-        System.out.println("precio: "+ precio);
+
+        System.out.println("categoria: " + idCategoria);
+        System.out.println("nombre: " + nombre);
+        System.out.println("decripcion: " + decripcion);
+        System.out.println("precio: " + precio);
 //        System.out.println("stock: "+ stock);
-        
-            
-         Producto p=new Producto();
-         p.setCategorias_id(idCategoria);
-         p.setNombre(request.getParameter("nombre"));
+
+        Producto p = new Producto();
+        p.setCategorias_id(idCategoria);
+        p.setNombre(request.getParameter("nombre"));
         p.setDescripcion(request.getParameter("descripcion"));
         p.setPrecio(Double.parseDouble(request.getParameter("precio")));
         p.setStock(Integer.parseInt(request.getParameter("stock")));
         p.setImagen_nombre(request.getParameter("file"));
         p.setCreado(LocalDateTime.now());
         p.setEstado(1);
-        
+
         obj.registrarProducto(p);
-        System.out.println("Se registro el producto: "+ p.toString());
-        String pag="listarProductos.jsp";
+        System.out.println("Se registro el producto: " + p.toString());
+        String pag = "listarProductos.jsp";
         request.getRequestDispatcher(pag).forward(request, response);
         // }
     }
-     
-       protected void consulta(HttpServletRequest request, HttpServletResponse response)
+
+    protected void consulta(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-           System.out.println("Se llamo al metodo consulta!");
-           int nro=Integer.parseInt(request.getParameter("cod"));
-           Producto p=obj.obtenerPorId(nro);
-           //reenviar el dato encontrado a la pagina pagEditar.jsp
-           request.setAttribute("dato", p);
-        String pag="editarProductos.jsp";
+        System.out.println("Se llamo al metodo consulta!");
+        int nro = Integer.parseInt(request.getParameter("cod"));
+        Producto p = obj.obtenerPorId(nro);
+        //reenviar el dato encontrado a la pagina pagEditar.jsp
+        request.setAttribute("dato", p);
+        String pag = "editarProductos.jsp";
         request.getRequestDispatcher(pag).forward(request, response);
-    } 
-       protected void cambia(HttpServletRequest request, HttpServletResponse response)
+    }
+
+    protected void cambia(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Producto p=new Producto();
+        Producto p = new Producto();
 //        p.setNro(Integer.parseInt(request.getParameter("numero")));
 //        p.setCliente(request.getParameter("cliente"));
 //        p.setMonto(Double.parseDouble(request.getParameter("monto")));
 //        p.setMes(Integer.parseInt(request.getParameter("mes")));
 //        obj.modifica(p);
-        String pag="pagListado.jsp";
+        String pag = "pagListado.jsp";
         request.getRequestDispatcher(pag).forward(request, response);
-        
+
     }
-          protected void anular(HttpServletRequest request, HttpServletResponse response)
+
+    protected void anular(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         int nro=Integer.parseInt(request.getParameter("cod"));
-         obj.anula(nro);
-           String pag="listarProductos.jsp";
+        int nro = Integer.parseInt(request.getParameter("cod"));
+        obj.anula(nro);
+        String pag = "listarProductos.jsp";
         request.getRequestDispatcher(pag).forward(request, response);
+
+    }
+
+    protected void validar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String pag = "";
+        String error="";
+        String email = request.getParameter("email");
+        String pass = request.getParameter("pass");
+        Usuario user=new Usuario();
+        user = log.obtenerUsuario(email, pass);
+        if(user!=null){
+            System.out.println("Usuario Valido");
+            pag = "listarProductos.jsp";
+        }else{
+            System.out.println("Usuario Invalido");
+            pag="login_registro.jsp";
+            error="falso";
+            request.setAttribute("dato", error);
+        }
         
+        
+        request.getRequestDispatcher(pag).forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

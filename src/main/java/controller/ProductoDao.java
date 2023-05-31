@@ -37,7 +37,6 @@ public class ProductoDao {
             e.printStackTrace();
         }
         return lis;
-        
     }
     
     public void registrarProducto(Producto p){

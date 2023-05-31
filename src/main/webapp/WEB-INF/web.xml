@@ -4,9 +4,25 @@
         <servlet-name>Carrito</servlet-name>
         <servlet-class>controller.Carrito</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>controlador</servlet-name>
+        <servlet-class>miServlet.controlador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>controlCategoria</servlet-name>
+        <servlet-class>miServlet.controlCategoria</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Carrito</servlet-name>
         <url-pattern>/Carrito</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controlador</servlet-name>
+        <url-pattern>/controlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controlCategoria</servlet-name>
+        <url-pattern>/controlCategoria</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

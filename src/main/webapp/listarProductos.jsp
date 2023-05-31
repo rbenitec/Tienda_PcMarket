@@ -1,9 +1,6 @@
-
 <%@page import="controller.ProductoDao"%>
 <%@page import="entities.Producto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,8 +11,8 @@
     <body style="font-family: Leelawadee UI, Consolas, Georgia, Arial Narrow ">
         <nav>
             <ol class="breadcrumb my-3">
-                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                <li class="breadcrumb-item"><a href="#">Mantenimiento</a></li>
+                <li class="breadcrumb-item"><a href="login_html.html">Login</a></li>
+                <li class="breadcrumb-item"><a href="listaCliente.jsp">Categorias</a></li>
                 <li class="breadcrumb-item active">Productos</li>
             </ol>
         </nav>

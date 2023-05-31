@@ -10,11 +10,13 @@ public class Cliente {
     private String correo;
     private int telef;
     private String fecha;
+    
 
     public Cliente() {
     }
 
-    public Cliente(int nrodoc, String tipo, String nombre, String ape, String correo, int telef, String fecha) {
+    public Cliente(int nrodoc, String tipo, String nombre,
+            String ape, String correo, int telef, String fecha) {
         this.nrodoc = nrodoc;
         this.tipo = tipo;
         this.nombre = nombre;
@@ -79,6 +81,22 @@ public class Cliente {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Cliente{");
+        sb.append("nrodoc=").append(nrodoc);
+        sb.append(", tipo=").append(tipo);
+        sb.append(", nombre=").append(nombre);
+        sb.append(", ape=").append(ape);
+        sb.append(", correo=").append(correo);
+        sb.append(", telef=").append(telef);
+        sb.append(", fecha=").append(fecha);
+        sb.append('}');
+        return sb.toString();
+    }
+    
     
     
           

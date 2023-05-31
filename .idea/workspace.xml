@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6270bb64-a807-41ff-894e-8f572c70a44f" name="Changes" comment="Merge_Master_With_joseespinoza">
-      <change beforePath="$PROJECT_DIR$/src/main/java/miServlet/controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/miServlet/controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login_registro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login_registro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/listarProductos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listarProductos.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

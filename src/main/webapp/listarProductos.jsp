@@ -20,7 +20,7 @@
                 <li class="breadcrumb-item"><a href="login_html.html">Login</a></li>
                 <li class="breadcrumb-item"><a href="listadoCategoria.jsp">Categorias</a></li>
                 <li class="breadcrumb-item active">Productos</li>
-                <li class="breadcrumb-item" style="text-align: right"><a style="text-align: right" href="login_html.html">Bienvenido: <%=userName%> </a></li>
+                <li class="breadcrumb-item" style="text-align: right"><a style="text-align: right" href="login_registro.html">Bienvenido: <%=userName%> </a></li>
             </ol>
         </nav>
 

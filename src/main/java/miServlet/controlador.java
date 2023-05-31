@@ -115,12 +115,15 @@ public class controlador extends HttpServlet {
         String pass = request.getParameter("pass");
         Usuario user=new Usuario();
         user = log.obtenerUsuario(email, pass);
+        System.out.println("email: "+email);
+        System.out.println("pass: "+pass);
         if(user!=null){
             System.out.println("Usuario Valido");
+            System.out.println("user: "+user.toString());
             pag = "listarProductos.jsp";
         }else{
             System.out.println("Usuario Invalido");
-            pag="login_registro.jsp";
+            pag="login_registro.html";
             error="falso";
             request.setAttribute("dato", error);
         }
@@ -129,7 +132,7 @@ public class controlador extends HttpServlet {
         request.getRequestDispatcher(pag).forward(request, response);
 
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

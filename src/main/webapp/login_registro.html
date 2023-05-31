@@ -30,7 +30,7 @@
                 <!--Formulario de Login y registro-->
                 <div class="contenedor__login-register">
                     <!--Login-->
-                    <form action="controlador" class="formulario__login">
+                    <form action="controlador?opc=5" method="post" class="formulario__login">
                         <h2>Iniciar Sesión</h2>
                         <div class="login_form-control">
                         <input type="text" id="correo_login" placeholder="Correo Electronico" name="email">
@@ -40,7 +40,7 @@
                         <input type="password" id="contrasena_login" placeholder="Contraseña" name="pass">
                         <div class="error"></div>
                         </div>
-                        <button id="btn_iniciar-sesion_form" type="submit" >Entrar</button>
+                        <button type="submit" >Entrar</button>
                     </form>
 
                     <!--Register-->

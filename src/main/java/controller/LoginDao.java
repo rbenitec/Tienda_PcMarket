@@ -13,7 +13,7 @@ public class LoginDao {
     public Usuario obtenerUsuario(String username, String password) {
     Usuario p = null;
     try (Connection cn = MySQLConexion.getConexion()) {
-        String sql = "SELECT email, password, name FROM usuarios WHERE email = ? AND password = ?";
+        String sql = "SELECT email, password, nombres FROM usuarios WHERE email = ? AND password = ?";
         try (PreparedStatement st = cn.prepareStatement(sql)) {
             st.setString(1, username);
             st.setString(2, password);

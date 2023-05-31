@@ -113,7 +113,8 @@ public class controlador extends HttpServlet {
         String error="";
         String email = request.getParameter("email");
         String pass = request.getParameter("pass");
-        Usuario user=  log.obtenerUsuario(email, pass);
+        Usuario user= new Usuario();  
+        user=log.obtenerUsuario(email, pass);
         String userName = user.getNombres();
         System.out.println("email: "+email);
         System.out.println("pass: "+pass);

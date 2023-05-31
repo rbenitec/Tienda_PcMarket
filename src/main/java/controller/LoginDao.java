@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import util.MySQLConexion;
 
-public class loginDao {
-    static Usuario validarUsuario(String username, String password) {
+public class LoginDao {
+    public Usuario obtenerUsuario(String username, String password) {
     Usuario p = null;
     try (Connection cn = MySQLConexion.getConexion()) {
         String sql = "SELECT username, password FROM usuarios WHERE username = ? AND password = ?";

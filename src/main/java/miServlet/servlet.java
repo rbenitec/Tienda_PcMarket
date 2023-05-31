@@ -53,8 +53,8 @@ public class servlet extends HttpServlet {
           c.setCorreo(request.getParameter("correo"));
           c.setTelef(Integer.parseInt(request.getParameter("telef")));
           c.setFecha(request.getParameter("fecha"));    
-    
-        obj.modifica(c);
+         
+          obj.modifica(c);
         String pag="/listaClientes.jsp";
         request.getRequestDispatcher(pag).forward(request, response);
         

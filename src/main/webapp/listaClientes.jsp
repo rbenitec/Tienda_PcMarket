@@ -12,10 +12,14 @@
         <%
             ClienteDao obj=new ClienteDao();          
         %>
-
+        <center>
         <h1 class="alert-info">Lista de Clientes Registrados</h1>
+        </center>
+        <br>
         <a href="RegistrarClientes.jsp">Registrar nuevos Clientes</a>
+        <br>
         <table class="table table-hover">
+            <br>
             <thead>
                 <tr class="bg-blue"><th>NroDoc<th>Tipo<th>Nombre<th>Apellidos<th>Email<th>Telefono<th>Fecha
                     <th>Modificar<th>Eliminar

@@ -9,8 +9,7 @@
         <link href="css/adminlte.min.css" rel="stylesheet" type="text/css"/>
         <link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
-        
+    <body>       
         <%  
         Cliente c=(Cliente)request.getAttribute("dato");
            %>
@@ -45,8 +44,7 @@
            <label for="fecha">Fecha</label>
          <input type="text" class="form-control" id="fecha" name="fecha" value="<%=c.getFecha()%>"> 
           </div> 
-          <button type="submit" class="btn btn-default">Submit</button> 
-        
+          <button type="submit" class="btn btn-default">Submit</button>    
         </form>
     </body>
 </html>

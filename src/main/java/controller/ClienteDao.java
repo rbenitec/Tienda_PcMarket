@@ -26,7 +26,9 @@ public class ClienteDao {
     public void modifica(Cliente c){
    Connection cn=MySQLConexion.getConexion();
    try{
-     String sql="update cliente set nombres=?,apellidos=?, email=?, telefono=?, creado=? where numeroDocumento=?";  
+     String sql="update cliente set nombres=?,apellidos=?, email=?,"
+             + " telefono=?, creado=? where numeroDocumento=?";  
+     
      //prepara una instruccion sql que sera ejecutada mediante la conexion
      PreparedStatement st=cn.prepareStatement(sql);
    
@@ -60,7 +62,8 @@ public class ClienteDao {
     List<Cliente> lis=new ArrayList();
     Connection cn=MySQLConexion.getConexion();
     try{
-      String slq="select numeroDocumento,tipoDocumento , nombres, apellidos, email, telefono, creado from cliente";  
+      String slq="select numeroDocumento,tipoDocumento , nombres, apellidos,"
+              + " email, telefono, creado from cliente";  
         PreparedStatement st=cn.prepareStatement(slq);
         ResultSet rs=st.executeQuery();
         while(rs.next()){//leer cada fila de la tabla
@@ -85,7 +88,8 @@ public Cliente consulta(int nro){
     Cliente c=null;
     Connection cn=MySQLConexion.getConexion();
     try{
-      String slq="select numeroDocumento, tipoDocumento ,nombres, apellidos, email,telefono, creado from cliente where numeroDocumento=?";  
+      String slq="select numeroDocumento, tipoDocumento ,nombres, "
+              + "apellidos, email,telefono, creado from cliente where numeroDocumento=?";  
         PreparedStatement st=cn.prepareStatement(slq);
         st.setInt(1, nro);
         ResultSet rs=st.executeQuery();

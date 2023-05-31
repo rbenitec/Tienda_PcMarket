@@ -1,31 +1,42 @@
+
 package entities;
 
 public class Categoria {
-    private int catid;
-    private String catnom;
-    private int catord;
+     private int id;
+    private String nombre;
+    private int orden;
 
-    public int getCatid() {
-        return catid;
+    public int getId() {
+        return id;
     }
 
-    public void setCatid(int catid) {
-        this.catid = catid;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getCatnom() {
-        return catnom;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setCatnom(String catnom) {
-        this.catnom = catnom;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public int getCatord() {
-        return catord;
+    public int getOrden() {
+        return orden;
     }
 
-    public void setCatord(int catord) {
-        this.catord = catord;
+    public void setOrden(int orden) {
+        this.orden = orden;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Categoria{id=").append(id);
+        sb.append(", nombre=").append(nombre);
+        sb.append(", orden=").append(orden);
+        sb.append('}');
+        return sb.toString();
     }
 }

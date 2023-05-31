@@ -23,18 +23,32 @@ public class servletUser extends HttpServlet {
             throws ServletException, IOException {
     // if(!obj.busNombre(request.getParameter("cliente"))){
          System.out.println("Se llamo al metodo adicion:!");
+         int rol = 1;
+         String email = (String)request.getParameter("email");
+         String nombre = (String)request.getParameter("nombre");
+         String pass = (String)request.getParameter("pass");
+         String sexo = (String)request.getParameter("sexo");
+         String nacimiento = (String)request.getParameter("naci");
+         String telef = (String)request.getParameter("telef");
+         String direccion = (String)request.getParameter("dir");
+         String estado = (String)request.getParameter("estado");
+         String dni = (String)request.getParameter("dni");
+         String user = (String)request.getParameter("user");
+         
+         
          Usuarios u=new Usuarios();       
          u.setRol(1);
-         u.setEmail(request.getParameter("email"));
-        u.setPass(request.getParameter("pass"));
-        u.setNombre(request.getParameter("nombre"));
-        u.setSexo(request.getParameter("sexo"));
-        u.setNacimiento(request.getParameter("naci"));
-        u.setTelefono(request.getParameter("telef"));  
-        u.setDireccion(request.getParameter("direc"));  
-        u.setEstado(request.getParameter("estado"));  
-        u.setDni(request.getParameter("dni"));  
-        u.setUser(request.getParameter("user"));  
+         u.setEmail(email);
+         u.setPass(pass);
+         u.setNombre(nombre);
+         u.setSexo(sexo);
+         u.setNacimiento(nacimiento);
+         u.setTelefono(telef);
+         u.setDireccion(direccion);
+         u.setEstado(estado);
+         u.setDni(dni);
+         u.setUser(user);
+        
         
          System.out.println("Se manda el cliente: "+ u.toString());
         obj.adicion(u);

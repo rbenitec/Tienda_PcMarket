@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6270bb64-a807-41ff-894e-8f572c70a44f" name="Changes" comment="Merge_Master_With_joseespinoza">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/listarProductos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listarProductos.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="6270bb64-a807-41ff-894e-8f572c70a44f" name="Changes" comment="Merge_Fabricio_With_Xiomara" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +51,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685512694645</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merge_Fabricio_With_Xiomara">
+      <created>1685522752683</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685522752683</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -69,6 +74,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge_Master_With_joseespinoza" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge_Master_With_joseespinoza" />
+    <MESSAGE value="Merge_Fabricio_With_Xiomara" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge_Fabricio_With_Xiomara" />
   </component>
 </project>

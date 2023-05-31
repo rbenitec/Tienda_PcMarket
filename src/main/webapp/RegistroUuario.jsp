@@ -11,8 +11,8 @@
     </head>
     <body>
         <h2>Registro de Usuarios</h2>      
-        <form id="form" action="servletUser"> 
-            <input type="hidden" name="opc" value="1"> 
+        <form id="form" action="servletUser?opc=1"> 
+<!--            <input type="hidden" name="opc" value="1"> -->
              <div class="form-group"> 
                  <div class="form-group"> 
                 <label for="rol">Rol</label> 
@@ -49,7 +49,7 @@
             </div> 
             <div class="form-group"> 
                 <label for="direc">Direccion</label> 
-                <input type="text" class="form-control" id="direc" name="telef"> 
+                <input type="text" class="form-control" id="direc" name="dir"> 
             </div> 
             <div class="form-group"> 
                 <label for="estado">Estado</label> 

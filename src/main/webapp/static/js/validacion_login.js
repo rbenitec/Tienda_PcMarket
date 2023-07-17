@@ -3,27 +3,22 @@ const correoLogin = document.getElementById('correo_login');
 const contrasenaLogin = document.getElementById('contrasena_login');
 const btnIniciarSesion = document.getElementById('btn_iniciar-sesion_form');
 
-btnIniciarSesion.addEventListener('click', e => {
-    e.preventDefault();
-    validateLoginInputsL();
-});
-
 const setErrorL = (element, message) => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
+  const inputControl = element.parentElement;
+  const errorDisplay = inputControl.querySelector('.error');
 
-    errorDisplay.innerText = message;
-    inputControl.classList.add('error');
-    inputControl.classList.remove('success');
+  errorDisplay.innerText = message;
+  inputControl.classList.add('error-control');
+  inputControl.classList.remove('success-control');
 };
 
 const setSuccessL = element => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
+  const inputControl = element.parentElement;
+  const errorDisplay = inputControl.querySelector('.error');
 
-    errorDisplay.innerText = '';
-    inputControl.classList.add('success');
-    inputControl.classList.remove('error');
+  errorDisplay.innerText = '';
+  inputControl.classList.add('success-control');
+  inputControl.classList.remove('error-control');
 };
 
 const isValidEmailL = email => {

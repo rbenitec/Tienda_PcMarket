@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+/*----DECLARACIONES GLOBALES----*/
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'PT Sans', sans-serif;
+    overflow: overlay;
+
+}
+
+/* Estilo para la barra de desplazamiento */
+body::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilo para el "pulgar" de la barra de desplazamiento */
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Color del pulgar con transparencia */
+    border-radius: 10px;
+}
+
+/* Estilo para la pista de desplazamiento */
+body::-webkit-scrollbar-track {
+    background-color: transparent; /* Fondo transparente */
+}
+
+
+header{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/fondo_1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+h1{
+    text-align: center;
+    display: flex;
+    color: #fff;
+    margin-bottom: 0;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+h3 {
+    text-align: center;
+    color: #fff;
+    margin-top: 0px; /* Ajustar el margen superior según sea necesario */
+}
+
+.container{
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+
+
+/*----NAV BAR | INICIO ----*/
+.nav{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    transition: all 0.5x ease;
+    z-index: 100;
+}
+
+.nav.active{
+    background: #fff;
+    padding: 15px;
+}
+.nav.active .logo,
+.nav.active a{
+    color: #000;
+}
+
+.nav.active a:hover{
+    background: #000;
+    color: #fff;
+}
+
+
+.logo{
+    font-size: 25px;
+    color: #fff;
+    font-weight: 100;
+}
+
+#cart-icon{
+    font-size: 1.8rem;
+    cursor:pointer;
+    background: #fff;
+    border-radius: 10px;
+    transition: all 0.5x ease;
+}
+
+#cart-icon :hover{
+    background: #000;
+    color: #fff;
+}
+
+.menu{
+    display: flex;
+}
+
+.menu li{
+    list-style: none;
+    margin: 10px;
+}
+
+.menu li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+.menu li a:hover{
+    padding: 5px 10px;
+    background: #fff;
+    color: #000;
+    border-radius: 15px;
+}
+
+.container_busqueda{
+    margin-top:120px;
+    position: absolute;
+    left: 48%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+}
+
+.input_busqueda{
+    outline: none;
+    box-sizing: border-box;
+    height: 50px;
+    width: 0;
+    padding: 0 20px;
+    color: #000;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 1px solid #D50000;
+    transition: all .7s ease;
+}
+
+::placeholder{
+    color: grey;
+}
+
+.btn{
+    position: absolute;
+    right:0;
+    top:0;
+    width:60px;
+    height:60px;
+    background: #D50000;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    cursor:pointer;
+    transition: .5s;
+}
+
+.btn i{
+    font-size: 225px;
+    color: white;
+    line-height: 80px;
+    transition: all .7 ease;
+}
+
+.container_busqueda:hover input{
+    width: 350px;
+}
+
+.container_busqueda:hover i{
+    transform: rotate(-360deg);
+}
+
+.btn:hover{
+    background: #cc0000;
+}
+
+.caja_trasera {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 128, 255, 0.5);
+    position: absolute;
+    text-align: center;
+    z-index: 50;
+}
+
+/*------ CARRITO ------*/
+
+.activa{
+
+}
+.cart{
+    position: fixed;
+    top:0;
+    right:-100%;
+    width:360px;
+    min-height: 100vh;
+    padding:20px;
+    background:#fff;
+    z-index: 100;
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+    transition:0.3s;
+}
+.cart.active{
+    right:0;
+}
+
+.titulo_carrito{
+    text-align:center;
+    front-size: 1.5rem;
+    font-weight:600;
+    margin-top: 2rem;
+}
+
+.caja_carrito{
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.imagen_carrito{
+    width:100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.caja_detalle{
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+.titulo_prod_carrito{
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.carrito_precio{
+    font-weight: 500;
+}
+
+.cantidad_producto{
+    border: 1px solid #171427;
+    outline-color: #fd4646;
+    width: 2rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.cart-remove{
+    font-size: 24px;
+    color: #fd4646;
+    cursor: pointer;
+}
+
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top: 1px solid #171427;
+}
+
+.titulo_total{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.total_precio{
+    margin-left: 0.5rem;
+}
+
+.btn-buy{
+    display: flex;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    border: none;
+    background: #fd4646;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-buy:hover{
+    background: #171427;
+}
+
+#close_cart{
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    color: #171427;
+    cursor: pointer;
+}
+
+/*------ CONTENIDO TIENDA------*/
+
+.contenedor_tienda{
+    margin-top:2rem;
+
+}
+
+.tienda{
+    margin-top: 2rem;
+}
+
+.tienda .izquierda{
+    right: 15rem;
+    padding-right: 15rem;
+}
+
+.titulo_seccion{
+    font-size: 1.5rem;
+    font-weight:600;
+    text-align: center;
+    margin-bottom:1.5rem;
+}
+
+.contenido_tienda{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+    gap: 1.5rem;
+}
+
+.caja_producto{
+    position: relative;
+}
+
+.caja_producto:hover{
+    padding: 10px;
+    border: 1px solid #000000;
+    transition: 0.4s;
+}
+
+.imagen_producto{
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.titulo_producto{
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+/*----CARRITO----*/
+/*
+--main-color: #fd4646;
+--text-color: #171427;
+--bg-color: #fff;
+
+*/
+
+.add-cart{
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    background: #171427;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.add-cart:hover{
+    background: hsl(0,100%, 50%);
+}
+
+

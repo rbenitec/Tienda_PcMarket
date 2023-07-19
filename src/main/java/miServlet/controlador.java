@@ -126,10 +126,17 @@ public class controlador extends HttpServlet {
         System.out.println("email: "+email);
         System.out.println("pass: "+pass);
         if(user!=null){
-            System.out.println("Usuario Valido");
-            System.out.println("user: "+user.toString());
-            request.setAttribute("user", userName);
-            pag = "listarProductos.jsp";
+            if(user.getId_rol()==3){
+                System.out.println("Usuario Valido");
+                System.out.println("user: "+user.toString());
+                request.setAttribute("user", userName);
+                pag = "listarProductos.jsp";
+            }else{
+                System.out.println("Usuario Valido");
+                System.out.println("user: "+user.toString());
+                request.setAttribute("user", userName);
+                pag = "frontView.jsp";
+            }
         }else{
             System.out.println("Usuario Invalido");
             pag="login_registro.html";

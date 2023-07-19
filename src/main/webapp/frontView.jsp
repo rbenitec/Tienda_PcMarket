@@ -77,7 +77,7 @@
                                 %>
                                 <div class="caja_producto">
                                     <td>
-                                        <img class="imagen_producto" alt="alt" src="static/img/<%=x.getImagen_nombre()%>.jpg" width="150">
+                                        <img class="imagen_producto" alt="alt" src="static/img/<%=x.getImagen_nombre()%>" width="150">
                                         
                      
                                             <h2 class="titulo_producto"><%=x.getNombre()%></h2>

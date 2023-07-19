@@ -17,7 +17,7 @@
         
         <nav>
             <ol class="breadcrumb my-3">
-                <li class="breadcrumb-item"><a href="login_html.html">Login</a></li>
+                <li class="breadcrumb-item"><a href="login_registro.html">Login</a></li>
                 <li class="breadcrumb-item"><a href="listadoCategoria.jsp">Categorias</a></li>
                 <li class="breadcrumb-item active">Productos</li>
                 <li class="breadcrumb-item" style="text-align: right"><a style="text-align: right" href="login_registro.html">Bienvenido: <%=userName%> </a></li>
@@ -25,7 +25,7 @@
         </nav>
 
         
-
+s
         <div class="card">
             <div class="card-header">
                 Lista de Productos

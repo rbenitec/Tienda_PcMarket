@@ -128,6 +128,27 @@ public class Usuarios {
     public void setUser(String user) {
         this.user = user;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Usuarios{");
+        sb.append("id=").append(id);
+        sb.append(", rol=").append(rol);
+        sb.append(", email=").append(email);
+        sb.append(", pass=").append(pass);
+        sb.append(", nombre=").append(nombre);
+        sb.append(", sexo=").append(sexo);
+        sb.append(", nacimiento=").append(nacimiento);
+        sb.append(", telefono=").append(telefono);
+        sb.append(", direccion=").append(direccion);
+        sb.append(", estado=").append(estado);
+        sb.append(", dni=").append(dni);
+        sb.append(", user=").append(user);
+        sb.append('}');
+        return sb.toString();
+    }
+    
     
     
 }

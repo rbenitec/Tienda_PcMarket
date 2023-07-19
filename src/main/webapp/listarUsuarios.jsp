@@ -14,7 +14,7 @@
         %>
 
         <h1 class="alert-info">Lista de Usuarios</h1>
-        <a href="RegistroUuario.jsp">Registrar nuevos usuarios</a>
+        <a href="login_registro.html">Registrar nuevos usuarios</a>
         <table class="table table-hover">
             <thead>
                 <tr class="bg-dark"><th>ID<th>ROL<th>EMAIL<th>PASSWORD<th>NOMBRE<th>SEXO<th>FECNACIMIENTO<th>TELEFONO<th>DIRECCION<th>ESTADO<th>DNI<th>USERNAME

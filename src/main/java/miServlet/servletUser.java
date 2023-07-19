@@ -89,10 +89,10 @@ public class servletUser extends HttpServlet {
             throws ServletException, IOException {
            int nro=Integer.parseInt(request.getParameter("cod"));
            System.out.println("id: " +nro);
-           Usuarios u=obj.consulta(nro);
-            System.out.println("Usuario: "+u.toString())   ;
+           //Usuarios u=obj.consulta(nro);
+            //System.out.println("Usuario: "+u.toString())   ;
     //reenviar el dato encontrado a la pagina editaCliente.jsp
-           request.setAttribute("dato", u);
+          // request.setAttribute("dato", u);
         String pag="/editaUsuario.jsp";
         request.getRequestDispatcher(pag).forward(request, response);  
         

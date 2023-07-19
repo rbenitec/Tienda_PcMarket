@@ -2,7 +2,7 @@
 package entities;
 
 public class Usuario {
-    private String id;
+    private int id;
     private int id_rol;
     private String email;
     private String password;
@@ -15,11 +15,11 @@ public class Usuario {
     private String dni;
     private String username;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

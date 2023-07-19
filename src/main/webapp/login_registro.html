@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login y Register</title>
 
@@ -44,30 +45,30 @@
                     </form>
 
                     <!--Register-->
-                    <form action="" class="formulario__register">
+                    <form action="controlador?opc=6" method="post" class="formulario__register">
                         <h2>Registrarse</h2>
                         <div class="registro-control">
-                        <input type="text" id="nombres" placeholder="Nombres">
+                        <input type="text" id="nombres" placeholder="Nombres" name="nombres">
                         <div class="error"></div>
                         </div>
                         
                         <div class="registro-control">
-                        <input type="text" id="user" placeholder="Usuario">
+                        <input type="text" id="user" placeholder="Usuario" name="user">
                         <div class="error"></div>
                         </div>
                         
                         <div class="registro-control">
-                        <input type="text" id="dni" placeholder="Documento de DNI">
+                        <input type="text" id="dni" placeholder="Documento de DNI" name="dni">
                         <div class="error"></div>
                         </div>
                         
                         <div class="registro-control">
-                        <input type="text" id="correo_register" placeholder="Correo Electronico">
+                        <input type="text" id="correo_register" placeholder="Correo Electronico" name="email">
                         <div class="error"></div>
                         </div>
                         
                         <div class="registro-control">
-                        <input type="password" id="contrasena_register" placeholder="Contraseña">
+                        <input type="password" id="contrasena_register" placeholder="Contraseña" name="pass">
                         <div class="error"></div>
                         </div>
                         
@@ -80,7 +81,7 @@
                         </div>
                             <div class="error"></div>
                         </div>
-                        <button id="btn_registrarse_form" type="button">Registrarse</button>
+                        <button type="submit" id="btn_registrarse_form" >Registrarse</button>
                     </form>
                 </div>
             </div>

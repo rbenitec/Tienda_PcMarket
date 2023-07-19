@@ -2,8 +2,10 @@ package miServlet;
 
 import controller.LoginDao;
 import controller.ProductoDao;
+import controller.UsuarioDao;
 import entities.Producto;
 import entities.Usuario;
+import entities.Usuarios;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,7 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 public class controlador extends HttpServlet {
-
+    UsuarioDao objUser = new UsuarioDao();
+ 
     ProductoDao obj = new ProductoDao();
     LoginDao log= new LoginDao();
     private static final String RUTA_DESTINO = "statis/img/";
@@ -39,6 +42,9 @@ public class controlador extends HttpServlet {
         }
         if (op == 5) {
             validar(request, response);
+        }
+        if (op == 6) {
+            adicionUser(request, response);
         }
     }
 
@@ -109,6 +115,7 @@ public class controlador extends HttpServlet {
 
     protected void validar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String pag = "";
         String error="";
         String email = request.getParameter("email");
@@ -133,6 +140,44 @@ public class controlador extends HttpServlet {
         
         request.getRequestDispatcher(pag).forward(request, response);
 
+    }
+    
+    protected void adicionUser(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    // if(!obj.busNombre(request.getParameter("cliente"))){
+         System.out.println("Se llamo al metodo adicion:!");
+         int rol = 1;
+         String email = (String)request.getParameter("email");
+         String nombre = (String)request.getParameter("nombres");
+         String pass = (String)request.getParameter("pass");
+         String sexo = (String)request.getParameter("genero");
+//         String nacimiento = (String)request.getParameter("naci");
+//         String telef = (String)request.getParameter("telef");
+//         String direccion = (String)request.getParameter("dir");
+//         String estado = (String)request.getParameter("estado");
+         String dni = (String)request.getParameter("dni");
+         String user = (String)request.getParameter("user");
+         
+         
+         Usuarios u=new Usuarios();       
+         u.setRol(1);
+         u.setEmail(email);
+         u.setPass(pass);
+         u.setNombre(nombre);
+         u.setSexo(sexo);
+//         u.setNacimiento(nacimiento);
+//         u.setTelefono(telef);
+//         u.setDireccion(direccion);
+//         u.setEstado(estado);
+         u.setDni(dni);
+         u.setUser(user);
+        
+        
+         System.out.println("Se manda el cliente: "+ u.toString());
+        objUser.adicion(u);
+        String pag="/listarUsuarios.jsp";
+        request.getRequestDispatcher(pag).forward(request, response);
+         
     }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

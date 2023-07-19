@@ -9,7 +9,7 @@ public class UsuarioDao {
    Connection cn=MySQLConexion.getConexion();
        System.out.println("LLego al DAO: "+ u.toString());
    try{
-     String sql="INSERT INTO tienda.usuarios (roles_id, email, password, nombres, sexo, fecnacimiento, telefono, direccion, estado, dni, username) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+     String sql="INSERT INTO tienda.usuarios (id, roles_id, email, password, nombres, sexo, dni, username) VALUES(null,?, ?, ?, ?, ?, ?, ?)";
      //prepara una instruccion sql que sera ejecutada mediante la conexion
      PreparedStatement st=cn.prepareStatement(sql);
      st.setInt(1, u.getRol());
@@ -17,12 +17,12 @@ public class UsuarioDao {
      st.setString(3, u.getPass());
      st.setString(4, u.getNombre());
      st.setString(5, u.getSexo());
-     st.setString(6, u.getNacimiento());
-     st.setString(7, u.getTelefono());
-     st.setString(8, u.getDireccion());
-     st.setString(9, u.getEstado());
-     st.setString(10, u.getDni());
-     st.setString(11, u.getUser());
+//     st.setString(6, u.getNacimiento());
+//     st.setString(7, u.getTelefono());
+//     st.setString(8, u.getDireccion());
+//     st.setString(9, u.getEstado());
+     st.setString(6, u.getDni());
+     st.setString(7, u.getUser());
      st.executeUpdate();
    }catch(Exception ex){
        ex.printStackTrace();
